@@ -29,7 +29,6 @@ namespace Geometrie_Computationala_1 {
 			Pen p = new Pen(Color.Red, 2);
 			Random rnd = new Random();
 
-
 			int n = rnd.Next(50, 200);
 			int x, y;
 			double d, d_min = int.MaxValue;
@@ -54,6 +53,7 @@ namespace Geometrie_Computationala_1 {
 					d_min = d;
 				}
 			}
+
 			d_min -= 1;
 			g.DrawEllipse(p, (float)(q.X - d_min), (float)(q.Y - d_min), (float)(2 * d_min), (float)(2 * d_min));
 		}
