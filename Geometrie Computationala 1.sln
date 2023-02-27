@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometrie Computationala 1", "Geometrie Computationala 1\Geometrie Computationala 1.csproj", "{2F6A3564-15B7-4C21-953D-4E6AF5E0C72F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2F6A3564-15B7-4C21-953D-4E6AF5E0C72F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F6A3564-15B7-4C21-953D-4E6AF5E0C72F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F6A3564-15B7-4C21-953D-4E6AF5E0C72F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F6A3564-15B7-4C21-953D-4E6AF5E0C72F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FCCFE0E0-49DF-4648-A705-F28C8DB43848}
+	EndGlobalSection
+EndGlobal
