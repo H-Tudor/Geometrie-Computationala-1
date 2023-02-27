@@ -19,14 +19,50 @@ namespace Geometrie_Computationala_1 {
 		}
 
 		private void Form1_Paint(object sender, PaintEventArgs e) {
-			Ex_2(e);
+			//Ex_1(e);
+			//Ex_2(e);
+			//Ex_3(e);
+		}
+
+		private void Ex_3(PaintEventArgs e) {
+			Graphics g = e.Graphics;
+			Pen p = new Pen(Color.Red, 2);
+			Random rnd = new Random();
+
+
+			int n = rnd.Next(50, 200);
+			int x, y;
+			double d, d_min = int.MaxValue;
+			Point[] points = new Point[n];
+
+			for(int i = 0; i < n; i++) {
+				x = rnd.Next(10, this.ClientSize.Width - 10);
+				y = rnd.Next(10, this.ClientSize.Height - 10);
+				points[i] = new Point(x, y);
+				g.DrawEllipse(p, x, y, 2, 2);
+			}
+
+			x = rnd.Next(10, this.ClientSize.Width - 10);
+			y = rnd.Next(10, this.ClientSize.Height - 10);
+			Point q = new Point(x, y);
+			p.Color = Color.Green;
+			g.DrawEllipse(p, x, y, 2, 2);
+
+			for(int i = 0; i < n; i++) {
+				d = Math.Sqrt(Math.Pow(x - points[i].X, 2) + Math.Pow(y - points[i].Y, 2));
+				if(d < d_min) {
+					d_min = d;
+				}
+			}
+			d_min -= 1;
+			g.DrawEllipse(p, (float)(q.X - d_min), (float)(q.Y - d_min), (float)(2 * d_min), (float)(2 * d_min));
 		}
 
 		private void Ex_2(PaintEventArgs e) {
 			Graphics g = e.Graphics;
 			Pen p = new Pen(Color.Red, 1);
-
 			Random rnd = new Random();
+
 			int n = rnd.Next(50, 200), m = rnd.Next(50, 200);
 			int x, y;
 			double d, d_min;
@@ -38,14 +74,14 @@ namespace Geometrie_Computationala_1 {
 				x = rnd.Next(10, this.ClientSize.Width - 10);
 				y = rnd.Next(10, this.ClientSize.Height - 10);
 				points[i] = new Point(x, y);
-				g.DrawEllipse(p, x, y, 3, 3);
+				g.DrawEllipse(p, x, y, 4, 4);
 			}
 
 			for(int i = 0; i < m; i++) {
 				p.Color = Color.Green;
 				x = rnd.Next(10, this.ClientSize.Width - 10);
 				y = rnd.Next(10, this.ClientSize.Height - 10);
-				g.DrawEllipse(p, x, y, 3, 3);
+				g.DrawEllipse(p, x, y, 4, 4);
 
 				d_min = int.MaxValue;
 				for(int j = 0; j < n; j++) {
@@ -57,15 +93,15 @@ namespace Geometrie_Computationala_1 {
 				}
 
 				p.Color = Color.Blue;
-				g.DrawLine(p, x, y, points[j_min].X, points[j_min].Y);
+				g.DrawLine(p, x+2, y+2, points[j_min].X +2, points[j_min].Y + 2);
 			}
 		}
 
 		private void Ex_1(PaintEventArgs e) {
 			Graphics g = e.Graphics;
 			Pen p = new Pen(Color.Black, 2);
-
 			Random rnd = new Random();
+
 			int n = rnd.Next(50, 200);
 			int x_min = this.ClientSize.Width, x_max = 0;
 			int y_min = this.ClientSize.Height, y_max = 0;
